@@ -3,6 +3,9 @@ package it.prova.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.data.domain.ExampleMatcher.StringMatcher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -49,8 +52,15 @@ public class AnnuncioServiceImpl implements AnnuncioService {
 
 	@Transactional(readOnly = true)
 	public List<Annuncio> findByExample(Annuncio example) {
-		// TODO Auto-generated method stub
-		return null;
+		 ExampleMatcher matcher = ExampleMatcher.matching()     
+                 .withStringMatcher(StringMatcher.CONTAINING);   // Match string containing pattern   
+                 //.withIgnoreCase();   
+		return (List<Annuncio>) annuncioRepository.findAll(Example.of(example,matcher));
+	}
+	
+	@Transactional(readOnly = true)
+	public List<Annuncio> findByTestoAnnuncio(String testoAnnuncio){
+		return annuncioRepository.findByTestoAnnuncio(testoAnnuncio);
 	}
 
 	@Override

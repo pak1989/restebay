@@ -24,4 +24,5 @@ public interface AnnuncioService {
 	
 	public List<Annuncio> listByIdUtente(long id);
 
+	public List<Annuncio> findByTestoAnnuncio(String testoAnnuncio);
 }

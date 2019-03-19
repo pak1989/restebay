@@ -61,12 +61,14 @@ public class AnnuncioResource {
 	@GET
 	@Path("/search")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response searchAnnuncio(@QueryParam("aperto") Boolean aperto, @QueryParam("testoAnnuncio") String testoAnnuncio,
-			@QueryParam("prezzo") int prezzo) { //, @QueryParam("ListaIdCategorie") Long[] listaIdCategorie) {
+	public Response searchAnnuncio(@QueryParam("testoAnnuncio") String testoAnnuncio) { //, @QueryParam("ListaIdCategorie") Long[] listaIdCategorie) {
 		
-		Annuncio example = new Annuncio(aperto, testoAnnuncio, prezzo);
-		Set<Category> categorieAnnuncio = new HashSet<>();
-		example.setCategory(categorieAnnuncio);
+//		Annuncio example = new Annuncio(testoAnnuncio);
+//		System.out.println(example.getTestoAnnuncio());
+		
+		
+//		Set<Category> categorieAnnuncio = new HashSet<>();
+//		example.setCategory(categorieAnnuncio);
 
 //		if (listaIdCategorie != null) {
 //
@@ -77,15 +79,18 @@ public class AnnuncioResource {
 //				example.getCategory().add(categoryTemp);
 //			}
 //		}
-		
-		List<Annuncio> result = annuncioService.findByExample(example);
+		System.out.println(testoAnnuncio);
+		List<Annuncio> result = annuncioService.findByTestoAnnuncio(testoAnnuncio);
+		System.out.println(result.size());
 		return Response.status(200).entity(AnnuncioDTO.listAnnuncioDTO(result)).build();
 	}
 
 	@DELETE
 	@Path("{id : \\d+}")
 	public Response deleteAnnuncio(@PathParam("id") Long id) {
+		System.out.println(id);
 		annuncioService.rimuovi(annuncioService.caricaSingoloAnnuncio(id));
+		
 		return Response.status(200).entity("Rimosso Annuncio avente id: " + id).build();
 	}
 

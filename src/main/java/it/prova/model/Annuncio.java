@@ -55,6 +55,11 @@ public class Annuncio {
 		this.prezzo = prezzo;
 	}
 
+	public Annuncio(String testoAnnuncio) {
+		super();
+		this.testoAnnuncio = testoAnnuncio;
+	}
+
 	public long getId() {
 		return id;
 	}
@@ -107,6 +112,10 @@ public class Annuncio {
 	public String toString() {
 		return "Annuncio [id=" + id + ", aperto=" + aperto + ", testoAnnuncio=" + testoAnnuncio + ", prezzo=" + prezzo
 				+ ", category=" + ", utente=" + utente.getNome() + "]";
+	}
+
+	public String toStringExample() {
+		return "Annuncio [aperto=" + aperto + ", testoAnnuncio=" + testoAnnuncio + "]";
 	}
 	
 	
