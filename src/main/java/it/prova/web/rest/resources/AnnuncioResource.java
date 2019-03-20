@@ -1,9 +1,7 @@
 package it.prova.web.rest.resources;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -20,7 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import it.prova.model.Annuncio;
-import it.prova.model.Category;
 import it.prova.service.AnnuncioService;
 import it.prova.web.dto.AnnuncioDTO;
 

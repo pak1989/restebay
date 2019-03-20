@@ -20,7 +20,7 @@ import it.prova.model.Utente;
 
 public class UtenteDTO {
 
-	private long id;
+	private Long id;
 	private String nome;
 	private String cognome;
 	private String username;
@@ -70,7 +70,7 @@ public class UtenteDTO {
 		this.creditoResiduo = creditoResiduo;
 	}
 
-	public UtenteDTO(long id, String nome, String cognome, String username, String password, Date dataRegistrazione,
+	public UtenteDTO(Long id, String nome, String cognome, String username, String password, Date dataRegistrazione,
 			int creditoResiduo) {
 		super();
 		this.id = id;
@@ -94,11 +94,11 @@ public class UtenteDTO {
 				utenteInput.getCreditoResiduo());
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

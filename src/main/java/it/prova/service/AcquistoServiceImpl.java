@@ -3,7 +3,7 @@ package it.prova.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import it.prova.model.Acquisto;
@@ -13,7 +13,7 @@ import it.prova.repository.AcquistoRepository;
 import it.prova.repository.AnnuncioRepository;
 import it.prova.repository.UtenteRepository;
 
-@Component
+@Service
 public class AcquistoServiceImpl implements AcquistoService {
 	
 	@Autowired
@@ -86,7 +86,6 @@ public class AcquistoServiceImpl implements AcquistoService {
 	
 //	@Override
 //	public List<Acquisto> listByIdUtente(long id) {
-//		return null;
-//		return acquistoRepository.listByIdUtente(id);
+//		return acquistoRepository.findByIdUtente(id);
 //	}
 }

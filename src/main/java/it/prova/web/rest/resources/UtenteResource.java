@@ -77,4 +77,22 @@ public class UtenteResource {
 		utenteService.aggiorna(utenteInput);
 		return Response.status(200).entity(utenteInput).build();
 	}
+	
+	@GET
+	@Path("/login")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response eseguiAccesso(@QueryParam("username") String username, @QueryParam("password") String password) {
+		
+		System.out.println(username + ' ' + password);
+		
+		Utente utenteInAccesso = utenteService.eseguiAccesso(username, password);
+		
+		if ( utenteInAccesso != null ) {
+			return Response.status(200).entity(new UtenteDTO(utenteService.caricaSingoloUtente(utenteInAccesso.getId()))).build();			
+		} else {
+			return Response.status(Response.Status.FORBIDDEN).entity("Utente non trovato!").build();
+		}
+	}
+	
+	
 }

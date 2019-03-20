@@ -6,4 +6,6 @@ import org.springframework.data.repository.query.QueryByExampleExecutor;
 import it.prova.model.Acquisto;
 
 public interface AcquistoRepository extends CrudRepository<Acquisto, Long>, QueryByExampleExecutor<Acquisto> {
+	
+//	List<Acquisto> findByIdUtente(long idUtente);
 }

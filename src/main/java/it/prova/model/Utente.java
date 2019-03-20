@@ -22,7 +22,7 @@ public class Utente {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private Long id;
 	private String nome;
 	private String cognome;
 	private String username;
@@ -60,7 +60,7 @@ public class Utente {
 		this.dataRegistrazione = dataRegistrazione;
 	}
 
-	public Utente(long id, String nome, String cognome, String username, String password, Date dataRegistrazione) {
+	public Utente(Long id, String nome, String cognome, String username, String password, Date dataRegistrazione) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -70,7 +70,7 @@ public class Utente {
 		this.dataRegistrazione = dataRegistrazione;
 	}
 
-	public Utente(long id, String nome, String cognome, String username, String password, Date dataRegistrazione,
+	public Utente(Long id, String nome, String cognome, String username, String password, Date dataRegistrazione,
 			Set<Ruolo> ruoli) {
 		super();
 		this.id = id;
@@ -105,11 +105,11 @@ public class Utente {
 		// TODO Auto-generated constructor stub
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

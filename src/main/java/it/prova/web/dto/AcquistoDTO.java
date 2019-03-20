@@ -25,7 +25,7 @@ public class AcquistoDTO {
 		super();
 		this.id = source.getId();
 		this.descrizioneAcquisto = source.getDescrizioneAcquisto();
-		this.prezzo = source.getAnno();
+		this.prezzo = source.getPrezzo();
 		this.anno = source.getAnno();
 		this.utente = source.getUtente();
 	}

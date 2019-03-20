@@ -71,6 +71,7 @@ public class UtenteServiceImpl implements UtenteService {
 //	}
 //	
 	@Override
+	@Transactional(readOnly=true)
 	public Utente eseguiAccesso(String username, String password) {
 		Query query = entityManager
 				.createQuery("SELECT u FROM Utente u WHERE u.username = :usernameParam and u.password= :passwordParam");
