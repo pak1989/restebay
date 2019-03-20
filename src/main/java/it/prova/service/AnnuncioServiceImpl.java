@@ -60,7 +60,8 @@ public class AnnuncioServiceImpl implements AnnuncioService {
 	
 	@Transactional(readOnly = true)
 	public List<Annuncio> findByTestoAnnuncio(String testoAnnuncio){
-		return annuncioRepository.findByTestoAnnuncio(testoAnnuncio);
+		
+		return annuncioRepository.findByTestoAnnuncioIgnoreCaseContaining(testoAnnuncio);
 	}
 
 	@Override

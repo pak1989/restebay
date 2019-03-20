@@ -9,5 +9,5 @@ import it.prova.model.Annuncio;
 
 public interface AnnuncioRepository extends CrudRepository<Annuncio, Long>, QueryByExampleExecutor<Annuncio> {
 
-	List<Annuncio> findByTestoAnnuncio(String testoAnnuncio);
+	List<Annuncio> findByTestoAnnuncioIgnoreCaseContaining(String testoAnnuncio);
 }
